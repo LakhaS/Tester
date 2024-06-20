@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello universe</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://www.static.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+</head>
+<body>
+   <header>
+    <h1>Welcome to my learning page</h1>
+    <p>This is a paragraph</p>
+   </header>
+    <!--This is a navagation bar-->
+    <nav>
+        <ul>
+            <li>
+                <a href="#section1">Introduction to HTML</a>
+                <a href="#section2">Basic HTML Tags</a>
+                <a href="#section3">Forms and Tables</a>
+                <a href="#section4">Upload</a>
+            </li>    
+        </ul>
+    </nav>
+    <!-- The main section -->
+    <main>
+        <section id="section1">
+            <div class="centered-container">
+              <h2>Introduction to HTML</h2>
+            </div>
+            <p>HTML is the standard markup lamguage for creating web pages.</p>
+            <!--HTML icon/logo-->
+            <img src="data:image/png;base64,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" height="200" width="200" alt="HTML5 logo">
+        </ul>
+        <li>HTML stand for Hyper Text Markup Language</li>
+        <li>HTML describes the structure of Web pages using markup</li>
+        <li>HTML elements are the building blocks of HTML pages</li>
+    </ul>
+        </section>
+
+        <section id="section2">
+            <h2>Basic HTML Tags</h2>
+            <ol>
+                <li><strong>&lt;h1&gt;</strong> to <strong>&lt;h6&gt;</strong>strong> - HTML Headings </li>
+                <li><strong>&lt;p&gt;</strong> - Paragraph </li>
+                <li><strong>&lt;a&gt;</strong> - Links</li>
+                <li><strong>&lt;img&gt;</strong> - Images </li>
+                <li><strong>&lt;ul&gt;</strong>/<strong>&lt;ol&gt;</strong> - List</li>
+            </ol>
+
+        </section>
+
+        <section id="section3">
+            <h2>Forms and Tables</h2>
+            <p>forms and tables are essential for data collection and presentation.</p>
+
+            <!--This is a form-->
+            <form action="/sumit_form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br></br>
+                <label for="email"> Email:</label>
+                <input type="email" id="email" name="email" <br></br>
+                <label for="number"> Cellphone number:</label>
+                <input type="tel" id="number" name="number"><br></br>
+                <input type="submit" value="submit">
+            </form>
+
+            <!--This is a table-->
+
+            <div class="Table-Savings">
+            <table class="table" border="center">
+                <tr>
+                    <th>Month</th>
+                    <th>Savings</th>
+                </tr>
+                <tr>
+                    <td>January</td>
+                    <td>R10 000</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td>R12 000</td>
+                </tr>
+                <tr>
+                    <td>March</td>
+                    <td>R8 000</td>
+                </tr>
+                <tr>
+                    <td>April</td>
+                    <td>R10 850</td>
+                </tr>
+                <tr>
+                    <td>May</td>
+                    <td>R9020</td>
+                </tr>
+                <tr>
+                    <td>June</td>
+                    <td>R15 000</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>R6508</td>
+                </tr>
+                <tr>
+                    <td>August</td>
+                    <td>R1989</td>
+                </tr>
+                <tr>
+                    <td>September</td>
+                    <td>R2900</td>
+                </tr>
+                <tr>
+                    <td>October</td>
+                    <td>R1500</td>
+                </tr>
+                <tr>
+                    <td>November</td>
+                    <td>R1300</td>
+                </tr>
+                <tr>
+                    <td>December</td>
+                    <td>R5000</td>
+                </tr>
+            </table>
+        </div>    
+    </section>
+    <section id="section4">
+        <h2>Upload and view images</h2>
+        <div class="upload-container">
+            <input type="file" id="imageUpload()" accept="image/*" multiple/>
+            <button class="upload-button" onclick="uploadImages()"> 
+                Upload Images
+            </button>
+        </div>
+        <div id="imageDisplayArea">
+            <p>No images uploaded yet</p>
+        </div>
+    </section>
+    </main>
+
+    <!--This is our footer section-->
+    <footer>
+        <p>Contact us, we are developers</p>
+        </footer>
+        <script src="app.js"></script>
+</body>
+</html>
